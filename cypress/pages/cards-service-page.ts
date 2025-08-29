@@ -5,6 +5,6 @@ export class CardsServicePage extends BasePage {
   private standardOption = "div";
 
   public selectStandard(): void {
-    cy.contains(this.standardOption, CardsServiceText.STANDARD).click();
+    cy.contains(this.standardOption, CardsServiceText.STANDARD_LABEL).click();
   }
 }

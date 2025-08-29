@@ -33,7 +33,9 @@ describe(`[${Cypress.browser.name}] Beckett E2E Checkout Cards as Guest`, () => 
     cardsSubgradesDetailsPage.clickSubmitNow();
 
     cy.url().should("include", Urls.STANDARD_SUBGRADES_DETAILS);
-    cy.contains(CardsSubgradeDetailsText.ADD_CARDS_HEADER).should("be.visible");
+    cy.contains(CardsSubgradeDetailsText.ADD_CARDS_HEADER_LABEL).should(
+      "be.visible",
+    );
 
     const cards = [
       CardsNames.DEL_UNSER,
@@ -75,6 +77,7 @@ describe(`[${Cypress.browser.name}] Beckett E2E Checkout Cards as Guest`, () => 
     reviewPage.getCardName(5).should("contain.text", CardsNames.DEL_UNSER);
     reviewPage.getDeclaredValue(5).should("have.text", ReviewText.VALUE_100);
     reviewPage.getQuantity(5).should("have.text", ReviewText.QUANTITY_VALUE);
+    reviewPage.getExtras(5).should("contain.text", ReviewText.OVERSIZED_LABEL);
     reviewPage
       .getName(`${address.firstName} ${address.lastName}`)
       .should("be.visible");

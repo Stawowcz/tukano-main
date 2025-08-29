@@ -1,3 +1,3 @@
 export enum CardsServiceText {
-  STANDARD = "Standard",
+  STANDARD_LABEL = "Standard",
 }

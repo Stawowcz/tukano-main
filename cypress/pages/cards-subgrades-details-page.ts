@@ -18,7 +18,7 @@ export class CardsSubgradesDetailsPage extends BasePage {
 
   public clickSubmitNow(): void {
     cy.get(this.standardSubmitNowCard).within(() => {
-      cy.contains("a", CardsSubgradeDetailsText.SUBMIT_NOW).click();
+      cy.contains("a", CardsSubgradeDetailsText.SUBMIT_NOW_LABEL).click();
     });
   }
 

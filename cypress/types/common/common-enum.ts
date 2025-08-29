@@ -1,3 +1,3 @@
 export enum CommonText {
-  SUBMIT = "Submit",
+  SUBMIT_LABEL = "Submit",
 }

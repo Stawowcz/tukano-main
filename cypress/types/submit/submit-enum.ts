@@ -1,3 +1,3 @@
 export enum SubmitText {
-  CARDS = "CARDS",
+  CARDS_LABEL = "CARDS",
 }

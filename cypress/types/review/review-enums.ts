@@ -9,4 +9,5 @@ export enum ReviewText {
   DECLARED_VALUE_LABEL = "Declared Value:",
   EXTRAS_LABEL = "Extras:",
   CHECKOUT_LABEL = "Checkout",
+  OVERSIZED_LABEL = "Oversized Card",
 }

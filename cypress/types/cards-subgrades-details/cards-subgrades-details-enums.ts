@@ -7,6 +7,6 @@ export enum CardsNames {
 }
 
 export enum CardsSubgradeDetailsText {
-  SUBMIT_NOW = "Submit now",
-  ADD_CARDS_HEADER = "Card Grading - Add Cards",
+  SUBMIT_NOW_LABEL = "Submit now",
+  ADD_CARDS_HEADER_LABEL = "Card Grading - Add Cards",
 }

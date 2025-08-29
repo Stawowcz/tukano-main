@@ -33,6 +33,12 @@ export class ReviewPage extends BasePage {
       .next(".tableValue");
   }
 
+  public getExtras(index: number) {
+    return this.getCardContainer(index)
+      .contains(".tableData", ReviewText.EXTRAS_LABEL)
+      .next(".tableValue");
+  }
+
   public clickAcceptTerms(): void {
     cy.get(this.tosCheckbox).check({ force: true });
   }
