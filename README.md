@@ -148,9 +148,10 @@ Outputs:
 
 ## Continuous Integration (CI)
 
-This project includes a **GitHub Actions** workflow to run Cypress E2E tests automatically.  
+This project includes a **GitHub Actions** workflow to run Cypress E2E tests automatically.
 
 ### Workflow highlights:
+
 - Runs on **Ubuntu latest**.
 - Uses a **matrix build** to execute tests in **Chrome, Firefox, and Edge** (headless).
 - Ensures cross-browser coverage for the Beckett flow.
@@ -160,13 +161,16 @@ This project includes a **GitHub Actions** workflow to run Cypress E2E tests aut
   - manually via `workflow_dispatch`
 
 ### Retry strategy
+
 - To reduce flakiness in CI, retries are enabled in `cypress.config.*`:
   ```ts
   retries: {
     runMode: 2,
     openMode: 0,
   }
-  
+
+  ```
+
 ---
 
 ## Troubleshooting
