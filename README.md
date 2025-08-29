@@ -30,7 +30,7 @@ root
    ├─ constants/                  # Application constants: base URL(s) and other fixed values (route paths, API endpoints)
    ├─ pages/                      # Page Objects (BasePage, SubmitPage, CardsPage, ShippingPage, ReviewPage, PaymentPage)
    ├─ reports/                    # Mochawesome JSON & HTML reports
-   ├─ support/                    # Cypress e2e.ts file
+   ├─ support/                    # Cypress e2e.ts and commands files
    ├─ types/                      # Types & enums (UiText, CardNames, ShippingAddress, etc.)
    ├─ utils/                      # Helpers, e.g., DataGenerator (Faker)
 └─ tests/                         # Spec files (e.g., checkout-five-carts.spec.ts)
@@ -95,7 +95,7 @@ npm run cy:all
 The project is configured to produce per‑browser **JSON** reports and then merge them into a single **HTML** report.
 
 
-### then merge + create HTML
+### Merge + create HTML report
 ```bash
 npm run report
 ```
@@ -103,7 +103,7 @@ npm run report
 
 ***Typical flow: ***
 
-### run in one or more browsers first
+### run in all browsers first
 ```bash
 npm run cy:all
 ```
