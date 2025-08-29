@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["cypress/components/index.ts"],
+      "@components/*": ["cypress/components/*"],
+      "@pages": ["cypress/pages/index.ts"],
+      "@pages/*": ["cypress/pages/*"],
+      "@utils": ["cypress/utils/index.ts"],
+      "@utils/*": ["cypress/utils/*"],
+      "@typings": ["cypress/types/index.ts"],
+      "@typings/*": ["cypress/types/*"],
+      "@constants": ["cypress/constants/index.ts"],
+      "@constants/*": ["cypress/constants/*"]
+    },
+
+    "types": ["cypress", "node", "@testing-library/cypress"],
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "cypress",
+    "tests",
+    "cypress.config.ts",
+    "cypress.d.ts",
+    "**/index.ts"
+  ]
+}

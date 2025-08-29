@@ -1,0 +1,6 @@
+export * from './base-page'
+export * from './carts-page'
+export * from './submit-page'
+export * from './payment-page'
+export * from './review-page'
+export * from './shipping-page'
