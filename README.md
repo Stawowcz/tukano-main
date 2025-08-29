@@ -37,7 +37,7 @@ root
 
 ```
 Key design:
-- **Page Object Model (POM)** organizes tests by pages/components; each page exposes high-level actions (e.g., `fillShipping()`, `submitOrder()`), hides locators, and keeps specs readable and maintainable.
+- **Page Object Model (POM)** organizes tests by pages/components; each page exposes high-level actions (e.g., `fillAddress()`), hides locators, and keeps specs readable and maintainable.
 - **BasePage / BaseComponent** encapsulate safe actions: `safeClick`, `safeType`, `safeSelect`, `safeCheck`, and `find`.
 - **Enums** (`UiText`, `CardNames`) centralize UI strings and card names.
 - **DataGenerator (Faker)** provides realistic shipping addresses.
@@ -45,34 +45,34 @@ Key design:
 
 ---
 
-## Tech Stack
+## Tech Stack (Required)
+- **Node.js** `23.9.0`
+- **Package manager**: npm
 - **Cypress** `^14.5.4`
 - **TypeScript** `^5.x`
 - **@faker-js/faker** – test data generation
 - **Mochawesome** + **mochawesome-merge** + **mochawesome-report-generator** – reporting
-
----
-
-## Requirements
-- **Node.js** = `23.9.0`
-- macOS/Linux/Windows (CI runs on Ubuntu runners).  
-- Chrome/Firefox/Edge installed locally if you want to run those browser targets.
+- **OS**: macOS / Linux / Windows (CI runs on Ubuntu)
+- **Browsers**: Chrome / Firefox / Edge installed locally if you want to run those targets
 
 ---
 
 ## Installation
+
+### clone the repo
 ```bash
-# clone the repo
 git clone https://github.com/Stawowcz/tukano-main.git
 cd tukano-main
+```
 
-# install dependencies
+### install dependencies
+```bash
 npm install
-# (or) npm install
 ```
 ---
 
-## How to Run
+## How to Run the Tests
+
 ### Interactive runner (GUI)
 ```bash
 npm run cy:open
@@ -94,17 +94,22 @@ npm run cy:all
 ## Reporting (Mochawesome)
 The project is configured to produce per‑browser **JSON** reports and then merge them into a single **HTML** report.
 
+
+### then merge + create HTML
 ```bash
-# then merge + create HTML
 npm run report
 ```
+---
 
-**Typical flow:**
+***Typical flow: ***
+
+### run in one or more browsers first
 ```bash
-# run in one or more browsers first
 npm run cy:all
+```
 
-# then merge + create HTML
+### then merge + create HTML
+```bash
 npm run report
 ```
 
