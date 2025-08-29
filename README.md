@@ -114,8 +114,6 @@ The project is configured to produce per‑browser **JSON** reports and then mer
 npm run report
 ```
 
----
-
 **_Typical flow: _**
 
 ### run in all browsers first
@@ -146,6 +144,29 @@ Outputs:
 - No fixtures are strictly needed; dynamic data comes from Faker.
 - Base URL is set via `cypress.config.*`
 
+---
+
+## Continuous Integration (CI)
+
+This project includes a **GitHub Actions** workflow to run Cypress E2E tests automatically.  
+
+### Workflow highlights:
+- Runs on **Ubuntu latest**.
+- Uses a **matrix build** to execute tests in **Chrome, Firefox, and Edge** (headless).
+- Ensures cross-browser coverage for the Beckett flow.
+- Can be triggered on:
+  - every push to `main`
+  - pull requests
+  - manually via `workflow_dispatch`
+
+### Retry strategy
+- To reduce flakiness in CI, retries are enabled in `cypress.config.*`:
+  ```ts
+  retries: {
+    runMode: 2,
+    openMode: 0,
+  }
+  
 ---
 
 ## Troubleshooting
