@@ -1,10 +1,10 @@
-import { UiText } from "@typings/ui";
+import { SubmitText } from "@typings/submit";
 import { BasePage } from "./base-page";
 
 export class SubmitPage extends BasePage {
   private cardsButton = "div.button-title";
 
   public clickOnCards(): void {
-    cy.contains(this.cardsButton, UiText.CARDS).click();
+    cy.contains(this.cardsButton, SubmitText.CARDS).click();
   }
 }

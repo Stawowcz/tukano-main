@@ -1,6 +1,5 @@
-
-import { UiText } from "@typings/ui";
 import { BasePage } from "./base-page";
+import { ReviewText } from "@typings/review";
 
 export class ReviewPage extends BasePage {
   private cardByIndex = (index: number) => `[data-test-id="card-${index}"]`;
@@ -8,15 +7,15 @@ export class ReviewPage extends BasePage {
   private expirationCheckbox = "#checked-expiration";
   private newsletterCheckbox = "#checked-newsletter";
   private freeText = "p.free-text";
-  private checkoutButton = 'button.btn-primary';
+  private checkoutButton = "button.btn-primary";
 
-  public getCardContainer(index: number) {
+  private getCardContainer(index: number) {
     return cy.get(this.cardByIndex(index));
   }
 
   public clickCheckout(): void {
-  cy.contains(this.checkoutButton, UiText.CHECKOUT).click();
-}
+    cy.contains(this.checkoutButton, ReviewText.CHECKOUT_LABEL).click();
+  }
 
   public getCardName(index: number) {
     return this.getCardContainer(index).find("p.fs-5");
@@ -24,22 +23,15 @@ export class ReviewPage extends BasePage {
 
   public getQuantity(index: number) {
     return this.getCardContainer(index)
-      .contains(".tableData", UiText.QUANTITY)
+      .contains(".tableData", ReviewText.QUANTITY_LABEL)
       .next(".tableValue");
   }
 
   public getDeclaredValue(index: number) {
     return this.getCardContainer(index)
-      .contains(".tableData", UiText.DECLARED_VALUE)
+      .contains(".tableData", ReviewText.DECLARED_VALUE_LABEL)
       .next(".tableValue");
   }
-
-  public getExtras(index: number) {
-    return this.getCardContainer(index)
-      .contains(".tableData", UiText.EXTRAS)
-      .next(".tableValue");
-  }
-
 
   public clickAcceptTerms(): void {
     cy.get(this.tosCheckbox).check({ force: true });
@@ -50,7 +42,7 @@ export class ReviewPage extends BasePage {
   }
 
   public clickNewsletter(): void {
-      cy.get(this.newsletterCheckbox).check({ force: true });
+    cy.get(this.newsletterCheckbox).check({ force: true });
   }
 
   public getName(fullName: string) {

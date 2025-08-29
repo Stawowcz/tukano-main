@@ -1,4 +1,4 @@
-import { ShippingAddress } from "@typings/shipping/shipping-types";
+import { ShippingAddress } from "@typings/shipping";
 import { BasePage } from "./base-page";
 
 export class ShippingPage extends BasePage {
@@ -12,7 +12,6 @@ export class ShippingPage extends BasePage {
   private city = "#city";
   private state = "#state";
   private zip = "#zipcode";
-
   private shippingInternational = "#shipping-International";
 
   public fillAddress(data: ShippingAddress): void {

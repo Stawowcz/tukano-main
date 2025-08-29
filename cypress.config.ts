@@ -5,7 +5,10 @@ export default defineConfig({
     baseUrl: "https://beckett.com/",
     specPattern: "tests/**/*.spec.{ts,tsx}",
     supportFile: "cypress/support/e2e.ts",
-    setupNodeEvents(on: Cypress.PluginEvents, config: Cypress.PluginConfigOptions) {
+    setupNodeEvents(
+      on: Cypress.PluginEvents,
+      config: Cypress.PluginConfigOptions,
+    ) {
       return config;
     },
     reporter: "mochawesome",

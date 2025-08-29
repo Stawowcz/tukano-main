@@ -1,12 +1,14 @@
 # Cypress E2E Framework – Beckett (TypeScript)
 
 ## Goal
+
 This repository contains an end‑to‑end (E2E) Cypress framework prepared for a recruitment assignment.  
 It automates the **guest CARDS order flow** on [beckett.com](https://beckett.com/) and stops at the **Checkout** screen (no payment is performed).
 
 ---
 
 ## Test Scenario (happy path)
+
 1. Open `https://beckett.com/`.
 2. Start submission → **Submit → CARDS → Continue as Guest**.
 3. Select service: **Standard**.
@@ -23,6 +25,7 @@ It automates the **guest CARDS order flow** on [beckett.com](https://beckett.com
 ---
 
 ## Project Structure (POM)
+
 ```
 root
    cypress/
@@ -36,7 +39,9 @@ root
 └─ tests/                         # Spec files (e.g., checkout-five-carts.spec.ts)
 
 ```
+
 Key design:
+
 - **Page Object Model (POM)** organizes tests by pages/components; each page exposes high-level actions (e.g., `fillAddress()`), hides locators, and keeps specs readable and maintainable.
 - **BasePage / BaseComponent** encapsulate safe actions: `safeClick`, `safeType`, `safeSelect`, `safeCheck`, and `find`.
 - **Enums** (`UiText`, `CardNames`) centralize UI strings and card names.
@@ -46,6 +51,7 @@ Key design:
 ---
 
 ## Tech Stack (Required)
+
 - **Node.js** `23.9.0`
 - **Package manager**: npm
 - **Cypress** `^14.5.4`
@@ -60,25 +66,30 @@ Key design:
 ## Installation
 
 ### clone the repo
+
 ```bash
 git clone https://github.com/Stawowcz/tukano-main.git
 cd tukano-main
 ```
 
 ### install dependencies
+
 ```bash
 npm install
 ```
+
 ---
 
 ## How to Run the Tests
 
 ### Interactive runner (GUI)
+
 ```bash
 npm run cy:open
 ```
 
 ### Specific browsers
+
 ```bash
 npm run cy:chrome
 npm run cy:firefox
@@ -86,34 +97,41 @@ npm run cy:edge
 ```
 
 ### All browsers sequentially
+
 ```bash
 npm run cy:all
 ```
+
 ---
 
 ## Reporting (Mochawesome)
+
 The project is configured to produce per‑browser **JSON** reports and then merge them into a single **HTML** report.
 
-
 ### Merge + create HTML report
+
 ```bash
 npm run report
 ```
+
 ---
 
-***Typical flow: ***
+**_Typical flow: _**
 
 ### run in all browsers first
+
 ```bash
 npm run cy:all
 ```
 
 ### then merge + create HTML
+
 ```bash
 npm run report
 ```
 
 Outputs:
+
 - Per‑browser JSON: `cypress/reports/mochawesome/mochawesome-*.json`
 - Merged JSON: `cypress/reports/mochawesome.json`
 - Final HTML: `cypress/reports/html/mochawesome.html`
@@ -123,6 +141,7 @@ Outputs:
 ---
 
 ## Environment Variables & Fixtures
+
 - No external secrets are required.
 - No fixtures are strictly needed; dynamic data comes from Faker.
 - Base URL is set via `cypress.config.*`
@@ -130,6 +149,7 @@ Outputs:
 ---
 
 ## Troubleshooting
+
 - **Retries**: consider enabling `retries` in `cypress.config` for CI flakiness.
 - **Overlays/Popups**: when 3rd-party overlays block elements, use `{ force: true }` (documented in tests/pages).
 - **Browser not found**: install the browser locally (Chrome/Firefox/Edge) or switch to a supported one.

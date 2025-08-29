@@ -2,7 +2,9 @@ import { faker } from "@faker-js/faker";
 import { ShippingAddress } from "@typings/shipping";
 
 export class DataGenerator {
-  static generateShippingAddress(overrides: Partial<ShippingAddress> = {}): ShippingAddress {
+  static generateShippingAddress(
+    overrides: Partial<ShippingAddress> = {},
+  ): ShippingAddress {
     const base: ShippingAddress = {
       firstName: faker.person.firstName(),
       lastName: faker.person.lastName(),
@@ -14,7 +16,6 @@ export class DataGenerator {
       state: "Lower Silesian Voivodeship",
       zip: faker.helpers.replaceSymbols("##-###"),
     };
-
     return { ...base, ...overrides };
   }
 }

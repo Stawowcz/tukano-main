@@ -11,4 +11,3 @@ export class LoginModalComponent extends BaseComponent {
     this.safeClick(this.continueAsGuestButton);
   }
 }
-

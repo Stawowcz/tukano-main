@@ -7,7 +7,7 @@ export abstract class BaseComponent {
     this.root = root;
   }
 
-  protected find(selector: string) {
+  private find(selector: string) {
     return cy.get(this.root).find(selector);
   }
 
